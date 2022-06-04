@@ -1,0 +1,66 @@
+input {
+  margin: 1.5rem .3rem 0;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  width: 45%;
+  display: inline-block;
+  padding: 0 .5rem;
+  outline: none;
+  border-radius: .2rem;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+#answer {
+  padding: 8%;
+  font-size: 2.2rem;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+button,
+input[type='reset'] {
+  padding: .5rem 1rem;
+  font-size: 1.3rem;
+  background-color: hotpink;
+  border: 2px solid deeppink;
+  width: 30%;
+  border-radius: .2rem;
+}
+
+input[type='reset'] {
+  line-height: 1.5rem;
+  background: transparent;
+  color: deeppink;
+  margin-right: 1rem;
+}
+
+button:hover {
+  animation: click .3s 0s 1;
+}
+
+input[type="reset"]:hover {
+  animation: click .3s 0s 1;
+}
+
+input:focus {
+  border: 1px solid deeppink;
+  box-shadow: 0 0 .2rem .1rem hotpink;
+
+}
+
+input::placeholder {
+  opacity: .6;
+}
+
+
+@keyframes click {
+  from {
+    box-shadow: 0 0 .1rem .1rem hotpink;
+  }
+
+  to {
+    box-shadow: 0 0 .1rem .3rem transparent,
+      0 0 .1rem .1rem hotpink;
+  }
+}
