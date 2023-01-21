@@ -9,4 +9,4 @@ async function swRegister(){
     }
 }
 
-swRegister()
+// swRegister()
