@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="manifest" href="manifest.json">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        
         <title>PCD Calc</title>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./style.css" />
+
+        <script src="./swRegister.js" async></script>
     </head>
     <body>
-    <form>
-        <input type='number' placeholder='pcd' id="pcd" />
-        
-        <input type='number' placeholder='no. of holes' id="nofHoles" />
-        
-        <input type='reset' id='reset' onclick='focuspcd(this)'/>
-        
-        <button onclick="answer(event)" >Enter</button>
-        
-        
-    </form>
-        <div id="answer">
-        
-        </div>
-        
+        <figure style="margin: 0; text-align: center;">
+            <img src="./Wheel-PCD.jpg" alt="PCD_Logo" width="55px" class="logo"/>
+        </figure>
+        <form>
+            <input type="number" placeholder="pcd" id="pcd" />
+
+            <input type="number" placeholder="no. of holes" id="nofHoles" />
+
+            <input type="reset" id="reset" onclick="focuspcd(this)" />
+
+            <button onclick="answer(event)">Enter</button>
+        </form>
+        <div id="answer"></div>
+
         <script>
-        const nh= document.getElementById('nofHoles')
-        
-        const pcd= document.getElementById('pcd')
-        
-        
-            function answer(e){
-                
-                const degree = 180/(Math.floor(nh.value))
-                const rad = degree * (Math.PI/180)
-                const angle= Math.sin(rad)
-                
-                document.getElementById('answer').innerHTML = 
-                (angle * Math.floor(pcd.value) || 0)
-                .toFixed(2) 
-                
-                nh.blur()
-                pcd.blur()
-                e.preventDefault()
-                
+            const nh = document.getElementById("nofHoles");
+
+            const pcd = document.getElementById("pcd");
+
+            function answer(e) {
+                const degree = 180 / Math.floor(nh.value);
+                const rad = degree * (Math.PI / 180);
+                const angle = Math.sin(rad);
+
+                document.getElementById("answer").innerHTML = (
+                    angle * Math.floor(pcd.value) || 0
+                ).toFixed(2);
+
+                nh.blur();
+                pcd.blur();
+                e.preventDefault();
             }
-            
-            function focuspcd(ele){
-                pcd.focus()
-            
+
+            function focuspcd(ele) {
+                pcd.focus();
             }
-            
         </script>
     </body>
 </html>

@@ -1,3 +1,27 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --primary: #598eff;
+  --secondary: #396ddf;
+}
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  padding-top: .4rem;
+}
+body::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  display: block;
+  background-image: url(./Wheel-PCD.jpg);
+}
+
 input {
   margin: 1.5rem .3rem 0;
   line-height: 2.5rem;
@@ -22,16 +46,18 @@ button,
 input[type='reset'] {
   padding: .5rem 1rem;
   font-size: 1.3rem;
-  background-color: hotpink;
-  border: 2px solid deeppink;
+  background-color: var(--primary);
+  border: 2px solid var(--secondary);
   width: 30%;
+  cursor: pointer;
+  color: white;
   border-radius: .2rem;
 }
 
 input[type='reset'] {
   line-height: 1.5rem;
   background: transparent;
-  color: deeppink;
+  color: var(--secondary);
   margin-right: 1rem;
 }
 
@@ -44,8 +70,8 @@ input[type="reset"]:hover {
 }
 
 input:focus {
-  border: 1px solid deeppink;
-  box-shadow: 0 0 .2rem .1rem hotpink;
+  border: 1px solid var(--secondary);
+  box-shadow: 0 0 .15rem .1rem var(--primary);
 
 }
 
@@ -56,11 +82,25 @@ input::placeholder {
 
 @keyframes click {
   from {
-    box-shadow: 0 0 .1rem .1rem hotpink;
+    box-shadow: 0 0 .1rem .1rem var(--primary);
   }
 
   to {
     box-shadow: 0 0 .1rem .3rem transparent,
-      0 0 .1rem .1rem hotpink;
+      0 0 .1rem .1rem var(--primary);
+  }
+}
+
+.logo{
+  animation: rotate 18s infinite linear;
+  -webkit-animation: rotate 18s infinite linear;
+}
+
+@keyframes rotate {
+  from{
+    rotate: 0deg;
+  }
+  to{
+    rotate: 360deg;
   }
 }
